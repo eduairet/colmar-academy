@@ -1,2 +1,2 @@
-# colmar-academy
+# Colmar Academy
 Capstone Project
