@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 300 800;
+    font-variation-settings: "wdth" 75 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 300 800;
+    font-variation-settings: "wdth" 75 100;
+    font-style: italic;
+}
+
+:root {
+    --text-color: rgb(50, 50, 50);
+    --text-color-light: rgb(150, 150, 150);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: lightgray;
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-variation-settings: "wdth" 100;
+}
+
+strong {
+    font-weight: 600;
+}
+
+nav {
+    background-color: white;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    margin-bottom: 32px;
+}
+
+.menu {
+    display: flex;
+    gap: 16px;
+}
+
+.menu-item {
+    font-size: 14px;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: font-weight 200ms ease-out;
+}
+.menu-link:hover {
+    font-weight: 600;
+    transition: font-weight 200ms ease-in;
+}
+.menu-link:active {
+    font-weight: 700;
+    color: var(--text-color-light);
+    transition-property: font-weight, color;
+    transition: all 200ms ease-in-out;
+}
+
+.logo {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.logo-colmar {
+    font-weight: 800;
+}
+
+.logo-academy {
+    font-weight: 600;
+    color: var(--text-color-light);
+}
