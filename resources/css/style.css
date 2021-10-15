@@ -15,7 +15,10 @@
 
 :root {
     --text-color: rgb(50, 50, 50);
-    --text-color-light: rgb(150, 150, 150);
+    --text-color-medium: rgb(100, 100, 100);
+    --text-color-light: rgb(230, 230, 230);
+    --accent-color: rgb(0, 109, 182);
+    --accent-color-hover: rgb(93, 190, 255);
 }
 
 * {
@@ -23,57 +26,151 @@
 }
 
 html {
-    background-color: lightgray;
+    background-color: var(--text-color-light);
     color: var(--text-color);
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-variation-settings: "wdth" 100;
+    font-size: 100%;
 }
 
 strong {
     font-weight: 600;
 }
 
+h1, h2, h3 {
+    font-weight: 800;
+}
+h4, h5 {
+    font-weight: 600;
+}
+h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+}
+h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+a {
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: font-weight 200ms ease-out;
+}
+
+a:hover {
+    font-weight: 600;
+    transition: font-weight 200ms ease-in;
+}
+
+a:active {
+    font-weight: 700;
+    color: var(--accent-color-light);
+    transition-property: font-weight, color;
+    transition: all 200ms ease-in-out;
+}
+
 nav {
     background-color: white;
     height: 64px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     padding: 16px 24px;
-    margin-bottom: 32px;
+    gap: 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: white;
+    font-size: 0.8rem;
+    margin-top: 32px;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 8px;
+    width: 100%;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: var(--text-color);
+    transition-property: font-weight, background-color;
+    transition: all 400ms ease-in-out;
+}
+
+button:hover {
+    font-weight: 600;
+    background-color: var(--text-color-light);
+    transition-property: font-weight, background-color;
+    transition: all 400ms ease-in-out;
+}
+
+button:active {
+    font-weight: 800;
+    transition: font-weight 400ms ease-in-out;
+}
+
+.caption {
+    font-size: 0.8rem;
 }
 
 .menu {
     display: flex;
     gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .menu-item {
-    font-size: 14px;
+    font-size: 0.8rem;
+    min-height: 34px;
+    min-width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
 }
 
 .menu-link {
-    text-decoration: none;
     color: var(--text-color);
-    transition: font-weight 200ms ease-out;
 }
-.menu-link:hover {
-    font-weight: 600;
-    transition: font-weight 200ms ease-in;
-}
+
 .menu-link:active {
-    font-weight: 700;
     color: var(--text-color-light);
-    transition-property: font-weight, color;
-    transition: all 200ms ease-in-out;
 }
 
 .logo {
     display: flex;
     gap: 8px;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.2rem;
 }
 
 .logo-colmar {
@@ -82,5 +179,101 @@ nav {
 
 .logo-academy {
     font-weight: 600;
-    color: var(--text-color-light);
+    color: var(--text-color-medium);
+}
+
+.main-element {
+    display: flex;
+    padding-bottom: 32px;
+}
+
+.main-image {
+    flex-basis: 60%;
+    margin-right: 24px;
+    min-height: 70vh;
+    background-image: url('../images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-info {
+    flex-basis: auto;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 24px;
+    padding: 32px 16px;
+}
+
+.main-info h2 {
+    margin-bottom: 8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+@media screen and (max-width: 600px)  {
+    .logo {
+        flex-basis: calc(100% * 0.25);
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu {
+        justify-content: space-between;
+        flex-basis: calc(100% * 0.75);
+    }
+
+    .menu-item {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-basis: calc(100%/3);
+        transition: transform 400ms ease-in-out;
+    }
+
+    .menu-link:hover {
+        transform: scale(1.1);
+        transition: transform 400ms ease-in-out;
+    }
+    
+    .menu-link:active {
+        transform: scale(1);
+    }
+
+    #logo-text {
+        display: none;
+    }
+
+    .main-element {
+        flex-direction: column;
+    }
+
+    .main-info {
+        padding: 32px 16px;
+    }
+
+    .main-image {
+        margin: 0px;
+    }
+
+    #second-col-main {
+        background-color: white;
+        padding-top: 32px;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-links {
+        display: none;
+        gap: 0px;
+    }
 }

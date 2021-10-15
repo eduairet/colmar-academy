@@ -14,17 +14,64 @@
 <body>
     <nav>
         <div class="logo">
-            <img class="logo" src="./resources/images/ic-logo.svg" alt="Logo" />
-            <p class="logo-text"><span class="logo-colmar">COLMAR</span><span class="logo-academy">ACADEMY</span></p>
+            <img src="./resources/images/ic-logo.svg" alt="Logo" />
+            <p id="logo-text"><span class="logo-colmar">COLMAR</span><span class="logo-academy">ACADEMY</span></p>
         </div>
-        <ul class="menu">
-            <li class="menu-item"><a class="menu-link" href="#" target="blank" alt="On campus">On campus</a></li>
-            <li class="menu-item"><a class="menu-link" href="#" target="blank" alt="Online">Online</a></li>
-            <li class="menu-item"><a class="menu-link" href="#" target="blank" alt="For companies">For companies</a></li>
-            <li class="menu-item"><a class="menu-link" href="#" target="blank" alt="Sign in">Sign in</a></li>
-        </ul>
+        <div id="nav-menu" class="menu"></div>
     </nav>
-    <main></main>
-    <footer></footer>    
+    <main>
+        <div class="main-element">
+            <div class="main-image" id="coffee-table"></div>
+            <div class="main-info">
+                <h2>Learn something new everyday</h2>
+                <h4>The quick brown fox jumps over the lazy dog</h4>
+                <button>Start here</button>
+            </div>
+        </div>
+        <div id="second-col-main" class="main-element">
+            <div class="main-image-text">
+                <div id="emanuel"></div>
+                <h3>It doesn't hurt to keep practicing</h3>
+                <p>Jim quickly realized that the beautiful gowns are expensive. Quirky spud boys can jam after zapping five worthy Polysixes.</p>
+                <p class="caption">Emanuel, Sr Strategist at Hiring.com</p>
+            </div>
+            <div id="second-main-info" class="main-info"></div>
+        </div>
+    </main>
+    <section id="start-learning" class="section-element">
+        <h3>Start learning</h3>
+        <div id="courses" class="section-content"></div>
+    </section>
+    <section id="thesis-exhibit" class="section-element">
+        <h3>Thesis exhibit</h3>
+        <div class="section-content">
+            <div class="video-info">
+                <div class="video"></div>
+                <h4>Reimagine urban</h4>
+                <p>The job of waxing linoleum frequently peeves chintzy kids. Back in June we delivered oxygen equipment of the same size.</p>
+            </div>
+            <div class="main-info">
+                <div class="info-el">
+                    <h4>Fisma: Design and Prototype</h4>
+                    <p>Designer showcase of new prototype product</p>
+                </div>
+                <div class="info-el">
+                    <h4>Now and then</h4>
+                    <p>Research study about New York</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© <span id="footer-year">2016</span> Colmar Academy. All rights reserved</p>
+        <div class="footer-links">
+            <a class="menu-link" href="#">Terms</a>
+            <a class="menu-link" href="#">Privacy</a>
+        </div>
+    </footer>    
 </body>
+<script src="./resources/javascript/navbar.js"></script>
+<script src="./resources/javascript/main.js"></script>
+<script src="./resources/javascript/startLearning.js"></script>
+<script src="./resources/javascript/footer.js"></script>
 </html>
