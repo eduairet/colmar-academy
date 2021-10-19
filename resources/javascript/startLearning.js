@@ -43,6 +43,7 @@ for (const courseInfo of Object.values(courses)) {
         courseImage.style.minHeight = '200px';
         courseImage.style.backgroundRepeat = 'no-repeat';
         courseImage.style.backgroundSize = 'cover';
+        courseImage.style.marginBottom = '16px';
         // Title
         const courseTitle = document.createElement('h4');
         courseTitle.innerHTML = courseInfo.h4;

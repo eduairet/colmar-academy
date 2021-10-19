@@ -55,6 +55,7 @@ h2 {
 h3 {
     font-size: 2rem;
     line-height: 2.5rem;
+    padding-bottom: 1.5rem;
 }
 h4 {
     font-size: 1.5rem;
@@ -106,11 +107,15 @@ main {
 
 footer {
     background-color: white;
-    font-size: 0.8rem;
-    margin-top: 32px;
-    padding: 16px 24px;
+    padding: 32px 24px;
     display: flex;
     justify-content: space-between;
+    border-top: 2px solid var(--text-color-light);
+}
+
+footer p,
+footer a {
+    font-size: 0.8rem;
 }
 
 button {
@@ -129,13 +134,16 @@ button {
 button:hover {
     font-weight: 600;
     background-color: var(--text-color-light);
-    transition-property: font-weight, background-color;
+    border: black 2px solid;
+    color: var(--text-color);
+    transition-property: font-weight, background-color, border, color;
     transition: all 400ms ease-in-out;
 }
 
 button:active {
     font-weight: 800;
-    transition: font-weight 400ms ease-in-out;
+    background-color: black;
+    transition: background-color 200ms ease-in-out;
 }
 
 .caption {
@@ -184,12 +192,12 @@ button:active {
 
 .main-element {
     display: flex;
-    padding-bottom: 32px;
+    padding: 0px 24px 32px 24px;
+    gap: 12px;
 }
 
 .main-image {
     flex-basis: 60%;
-    margin-right: 24px;
     min-height: 70vh;
     background-image: url('../images/banner.jpg');
     background-repeat: no-repeat;
@@ -198,8 +206,7 @@ button:active {
 }
 
 .main-info {
-    flex-basis: auto;
-    flex-basis: 30%;
+    flex-basis: 40%;
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -207,8 +214,126 @@ button:active {
     padding: 32px 16px;
 }
 
+.thirty {
+    flex-basis: 30%;
+}
+
 .main-info h2 {
     margin-bottom: 8px;
+}
+
+.second-main-info {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 16px;
+}
+
+.second {
+    background-color: white;
+    padding: 16px 24px 32px 24px;
+    gap: 0px;
+}
+
+.main-image-text{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+    padding-top: 16px;
+}
+
+#emanuel {
+    width: 100%;
+    min-height: 40vh;
+    background-image: url('../images/information-main.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 32px;
+}
+
+.caption {
+    padding-top: 24px;
+    justify-self: flex-end;
+}
+
+.info-el {
+    display: flex;
+    gap: 1rem;
+    padding: 16px;
+    flex-basis: calc(100%/3);
+}
+
+.info-el:hover {
+    background-color: var(--text-color-light);
+}
+
+.info-el-picture {
+    flex-basis: 35%;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+}
+
+.info-el-info {
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 48px 16px 48px;
+    gap: 32px;
+}
+
+.section-element {
+    padding: 32px 24px;
+}
+
+.section-element h3{
+    text-align: center;
+}
+
+.section-element h4{
+    padding-bottom: 8px;
+}
+
+.section-element p{
+    padding-bottom: 8px;
+}
+
+#thesis-exhibit {
+    background-color: white;
+}
+
+.video-info {
+    width: 100%;
+    min-height: 40vh;
+    margin-bottom: 24px;
+    background-color: var(--text-color);
+}
+
+.course {
+    flex-basis: calc(( (100% - 64px) /3));
+    background-color: white;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.course h4,
+.course p {
+    padding: 0px 16px;
+}
+
+.course p {
+    color: var(--text-color-medium);
 }
 
 .footer-links {
@@ -251,6 +376,7 @@ button:active {
 
     .main-element {
         flex-direction: column;
+        padding: 0px
     }
 
     .main-info {
@@ -259,13 +385,66 @@ button:active {
 
     .main-image {
         margin: 0px;
+        min-height: 250px;
     }
 
     #second-col-main {
         background-color: white;
-        padding-top: 32px;
+        padding: 32px 0px 0px 0px;
+    }
+
+    .info-el {
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .info-el-picture {
+        min-height: 200px;
+    }
+
+    .info-el-info {
+        padding: 16px 16px 64px 16px;
+    }
+
+    #start-learning {
+        background-color: white;
+    }
+
+    .section-element {
+        border-top: 2px solid var(--text-color-light);
+    }
+
+    .section-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 8px;
+        padding: 0px;
+    }
+
+    .course {
+        background-color: var(--text-color-light);
+        padding: 16px 16px 24px 16px;
+    }
+
+    .course h4{
+        text-align: center;
+    }
+
+    .no-mobile,
+    .course div,
+    .course p {
+        display: none;
     }
     
+    .video-info {
+        padding-right: 0px;
+    }
+
+    .no-side-padding {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
     footer {
         flex-direction: column;
         align-items: center;

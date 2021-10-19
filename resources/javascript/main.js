@@ -4,6 +4,7 @@ const infoBlocks = {
     orientation: {
         pic: `${imagesPath}/information-orientation.jpg`,
         picMobile: `${imagesPath}/information-orientation-mobile.jpg`,
+        id: 'orientation',
         h4: 'Orientation date',
         p: 'Tue 10/11 & Wed 10/11: 8:00am-3:00pm',
         readMore: '#'
@@ -11,6 +12,7 @@ const infoBlocks = {
     ourCampus: {
         pic: `${imagesPath}/information-campus.jpg`,
         picMobile: `${imagesPath}/information-campus-mobile.jpg`,
+        id: 'campus',
         h4: 'Our campus',
         p: 'Find which campus is close to you',
         readMore: '#'
@@ -18,6 +20,7 @@ const infoBlocks = {
     guestLecture: {
         pic: `${imagesPath}/information-guest-lecture.jpg`,
         picMobile: `${imagesPath}/information-guest-lecture-mobile.jpg`,
+        id: 'guest',
         h4: 'Our guest lecture',
         p: 'Join a keynote with Oliver Sack about music in medical treatment',
         readMore: '#'
@@ -34,7 +37,7 @@ for (const infoBlock of Object.values(infoBlocks)) {
         const mainInfoElPicture = document.createElement('div');
         mainInfoElPicture.className = 'info-el-picture';
         mainInfoElPicture.style.backgroundImage = `url(${infoBlock.pic})`;
-        mainInfoElPicture.id = infoBlock.pic.replace('.jpg', '')
+        mainInfoElPicture.id = infoBlock.id;
         // Info block
         const mainInfoElInfo = document.createElement('div');
         mainInfoElInfo.className = 'info-el-info';
@@ -58,3 +61,15 @@ for (const infoBlock of Object.values(infoBlocks)) {
     // Append to second main info
     secondMainInfo.appendChild(mainInfoEl);
 }
+
+const changePics = () => {
+    if (window.innerWidth < 600) {
+        for (const infoBlock of Object.values(infoBlocks)) {
+            const el = document.getElementById(infoBlock.id);
+            el.style.backgroundImage = `url(${infoBlock.picMobile})`;
+        }
+    }
+}
+
+window.onload = changePics();
+window.addEventListener('resize', changePics());
