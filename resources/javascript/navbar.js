@@ -39,7 +39,6 @@ const changeMenu = () => {
         signin.style.backgroundImage = `url(${signinIcon})`;
         if (document.getElementById('companies') !== null) {
             document.getElementById('companies').parentElement.remove();
-            document.getElementById('companies').remove();
         }
     } else {
         oncampus.innerHTML = 'On campus';
